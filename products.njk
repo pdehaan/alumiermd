@@ -1,0 +1,834 @@
+---
+layout: default
+---
+         <div class="content">
+            <div class="wrapper">
+               <div class="breadcrumb">
+                  <a href="/">Home</a>
+                  <svg width="14" height="7" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M13.963 3.674c.05-.099.05-.248 0-.397-.05-.05-.05-.1-.098-.149L10.91.15a.473.473 0 0 0-.689 0 .483.483 0 0 0 0 .695L12.34 2.98H.492c-.295 0-.492.199-.492.497s.197.496.492.496H12.34l-2.117 2.135a.483.483 0 0 0 0 .695.53.53 0 0 0 .345.15.53.53 0 0 0 .344-.15l2.954-2.979c.049-.05.098-.099.098-.149z" fill="#A3A3A9" fill-rule="nonzero" opacity=".5"/>
+                  </svg>
+                  <span>Products</span>
+               </div>
+               {# Search form ========================================================= #}
+               <form id="product_search_form" class="horizontal-search" action="/products" accept-charset="UTF-8" method="get">
+                  <input name="utf8" type="hidden" value="&#x2713;" />
+                  <input type="hidden" name="order_by" id="products_sort_order" />
+                  <div class="fieldset">
+                     <label>Categories</label>
+                     <select name="taxon_categories" id="taxon_categories" class="taxons-list">
+                        <option value="">Select</option>
+                        <option value="Essentials">Essentials</option>
+                        <option value="Sunscreens">Sunscreens</option>
+                        <option value="Eye Products">Eye Products</option>
+                        <option value="Cleansers">Cleansers</option>
+                        <option value="Moisturizers">Moisturizers</option>
+                        <option value="Targeted Serums">Targeted Serums</option>
+                        <option value="Exfoliants">Exfoliants</option>
+                        <option value="Post Procedure">Post Procedure</option>
+                        <option value="Collections">Collections</option>
+                     </select>
+                  </div>
+                  <div class="fieldset">
+                     <label>Skin Condition</label>
+                     <select name="taxon_skin_condition" id="taxon_skin_condition" class="taxons-list">
+                        <option value="">Select</option>
+                        <option value="Acne">Acne</option>
+                        <option value="Aging">Aging</option>
+                        <option value="Discoloration">Discoloration</option>
+                        <option value="Redness-Prone / Sensitive">Redness-Prone / Sensitive</option>
+                     </select>
+                  </div>
+                  <div class="fieldset">
+                     <label>Skin Type</label>
+                     <select name="taxon_skin_type" id="taxon_skin_type" class="taxons-list">
+                        <option value="">Select</option>
+                        <option value="Normal Skin">Normal Skin</option>
+                        <option value="Dry Skin">Dry Skin</option>
+                        <option value="Oily Skin">Oily Skin</option>
+                        <option value="Combination Skin">Combination Skin</option>
+                     </select>
+                  </div>
+                  <script type="text/javascript" charset="utf-8">
+                     document.addEventListener('turbolinks:load', function(event) {
+                       function selectElement(id, valueToSelect) {
+                         var element = document.getElementById(id);
+                     
+                         if(valueToSelect) {
+                           element.value = valueToSelect;
+                         }
+                         else {
+                           element.selectedIndex = 0;
+                         }
+                       }
+                     
+                       //selectElement("taxon_categories", );
+                       //selectElement("taxon_skin_condition", );
+                       //selectElement("taxon_skin_type", );
+                     });
+                  </script>
+                  <div class="fieldset">
+                     <input placeholder="Keyword" type="text" name="keywords" />
+                     <button name="button" type="submit">
+                        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M12.5 11h-.79l-.28-.27A6.471 6.471 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L17.49 16l-4.99-5zm-6 0C4.01 11 2 8.99 2 6.5S4.01 2 6.5 2 11 4.01 11 6.5 8.99 11 6.5 11z" fill="#D8D8D8" fill-rule="nonzero"/>
+                        </svg>
+                     </button>
+                  </div>
+               </form>
+               {#-- Featured products ================================================== #}
+               <div class="featured-products">
+                  <h2 class="m-b-xl">Featured products</h2>
+                  <div class="space-fix">
+                     <div class="grid-container">
+                        <div class="grid grid-primary">
+                           <div class="grid-content">
+                              <div class="featured" style="background-image:url('/i/EverActive_Webpage_Ivonne.webp');">
+                                 <div class="content">
+                                    <div class="product-info">
+                                       <h3>EverActive C&amp;E™ + Peptide</h3>
+                                       <p>Award-Winning vitamin C </p>
+                                       <a class="normal" href="/products/everactive-c-e-51422">
+                                          <svg width="18" height="9" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M17.953 4.757c.063-.128.063-.321 0-.514-.064-.064-.064-.129-.127-.193L14.029.193a.605.605 0 0 0-.886 0 .628.628 0 0 0 0 .9l2.721 2.764H.633c-.38 0-.633.257-.633.643s.253.643.633.643h15.231l-2.72 2.764a.628.628 0 0 0 0 .9.678.678 0 0 0 .442.193.678.678 0 0 0 .443-.193l3.797-3.857c.063-.064.127-.129.127-.193z" fill="#3F3F41" fill-rule="nonzero"/>
+                                          </svg>
+                                       </a>
+                                    </div>
+                                    <div class="product-news">
+                                       <div class="product-news-swiper">
+                                          <h4>In the news</h4>
+                                          <div class="swiper-wrapper">
+                                             <div class="swiper-slide">
+                                                <a href="/blog/va-va-vitamin-c/">Activate Your Best Skin</a>
+                                             </div>
+                                             <div class="swiper-slide">
+                                                <a href=""></a>
+                                             </div>
+                                          </div>
+                                          <div class="swiper-next">
+                                             <svg width="18" height="9" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.953 4.757c.063-.128.063-.321 0-.514-.064-.064-.064-.129-.127-.193L14.029.193a.605.605 0 0 0-.886 0 .628.628 0 0 0 0 .9l2.721 2.764H.633c-.38 0-.633.257-.633.643s.253.643.633.643h15.231l-2.72 2.764a.628.628 0 0 0 0 .9.678.678 0 0 0 .442.193.678.678 0 0 0 .443-.193l3.797-3.857c.063-.064.127-.129.127-.193z" fill="#3F3F41" fill-rule="nonzero"/>
+                                             </svg>
+                                          </div>
+                                          <div class="swiper-prev">
+                                             <svg width="18" height="9" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M.047 4.757c-.063-.128-.063-.321 0-.514.064-.064.064-.129.127-.193L3.971.193a.605.605 0 0 1 .886 0 .628.628 0 0 1 0 .9L2.136 3.857h15.231c.38 0 .633.257.633.643s-.253.643-.633.643H2.136l2.72 2.764a.628.628 0 0 1 0 .9.678.678 0 0 1-.442.193.678.678 0 0 1-.443-.193L.174 4.95c-.063-.064-.127-.129-.127-.193z" fill="#3F3F41" fill-rule="nonzero"/>
+                                             </svg>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="grid grid-alt">
+                           <div class="grid-content">
+                              <a class="normal" href="/products/bright-clear-solution-13404">
+                                 <span style="background-image:url('/i/Feature_Bright_and_Clear_Ivonne.webp');"></span>
+                                 <p>Bright &amp; Clear Solution</p>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="grid grid-alt">
+                           <div class="grid-content">
+                              <a class="normal" href="/products/alumience-a-g-e-11318">
+                                 <span style="background-image:url('/i/Feature_AGE_Ivonne.webp');"></span>
+                                 <p>Alumience A.G.E.™</p>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="grid grid-alt">
+                           <div class="grid-content">
+                              <a class="normal" href="/products/sheer-hydration-broad-spectrum-sunscreen-spf-40">
+                                 <span style="background-image:url('/i/Feature_Sunscreen_Ivonne.webp');"></span>
+                                 <p>Sheer Hydration Broad Spectrum SPF 40 (Untinted)</p>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="grid grid-alt">
+                           <div class="grid-content">
+                              <a class="normal" href="/products/eye-rescue-pads-retail-33111">
+                                 <span style="background-image:url('/i/Feature_Eye_Rescue_Pads_Ivonne.webp');"></span>
+                                 <p>Eye Rescue Pads </p>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="products">
+                  <h2 class="m-b-l">Products</h2>
+                  <div class="row">
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/acne-balancing-serum">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Acne_Balancing_Serum_Ivonne.webp');"></span>
+                           <p>Acne Balancing Serum</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/acne-clarifying-cleanser">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Acne_Clarifying_Cleanser_6oz_Bottle_with_Pump_Ivonne.webp');"></span>
+                           <p>Acne Clarifying Cleanser</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/aha-renewal-serum-11405">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_AHA_Renewal_Serum_Ivonne.webp');"></span>
+                           <p>AHA Renewal Serum</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/alumience-a-g-e-11318">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Alumience_AGE_Ivonne.webp');"></span>
+                           <p>Alumience A.G.E.™</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/alumineye">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/15ml_Bottle_AluminEye_Ivonne.webp');"></span>
+                           <p>AluminEye™</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/bright-clear-solution-13404">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Bright_and_Clear_Solution_Ivonne.webp');"></span>
+                           <p>Bright &amp; Clear Solution</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/brightening-collection-for-hyperpigmentation-2-dry-sensitive">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Brightening_Collection_Dry_Sensitive_Ivonne.webp');"></span>
+                           <p>Brightening Collection for Hyperpigmentation 2% HQ - Dry/Sensitive</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/brightening-collection-for-hyperpigmentation-2-normal-oily">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Brightening_Collection_Normal_Oily_Ivonne.webp');"></span>
+                           <p>Brightening Collection for Hyperpigmentation 2% HQ - Normal/Oily</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/brightening-collection-for-hyperpigmentation-dry-sensitive-54119">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Brightening_Collection_Dry_Sensitive_Ivonne_NHQ_Ivonne.webp');"></span>
+                           <p>Brightening Collection for Hyperpigmentation Non-HQ -  Dry/Sensitive</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/brightening-collection-for-hyperpigmentation-normal-oily-54118">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Brightening_Collection_Normal_Oily_Ivonne_NHQ_Ivonne.webp');"></span>
+                           <p>Brightening Collection for Hyperpigmentation Non-HQ - Normal/Oily</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/calming-collection">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Cosmetic_Bag_w_Belly_Band_Calming_Collection_Ivonne.webp');"></span>
+                           <p>Calming Collection</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/calm-r">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Calm-R_Ivonne.webp');"></span>
+                           <p>Calm-R™</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/clarifying-collection">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Cosmetic_Bag_w_Belly_Band_Clarifying_Collection_Ivonne.webp');"></span>
+                           <p>Clarifying Collection</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/clear-shield-broad-spectrum-sunscreen-spf-42">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Clear_Shield_SPF42_Ivonne.webp');"></span>
+                           <p>Clear Shield Broad Spectrum SPF 42</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/enzymatic-peel-11417">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/90ml_Tube_Enzymatic_Peel_Ivonne.webp');"></span>
+                           <p>Enzymatic Peel</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/eventone-brightening-serum-11314">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml-Bottle_EvenTone_Ivonne.webp');"></span>
+                           <p>EvenTone</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/everactive-c-e-51422">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Everactive-c-e_Ivonne.webp');"></span>
+                           <p>EverActive C&amp;E™ + Peptide</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/eye-rescue-pads-retail-33111">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Eye_Rescue_Box_and_Eye_Pads_Ivonne.webp');"></span>
+                           <p>Eye Rescue Pads </p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/hydraboost">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/HydraBoost_Cleanser_6oz_bottle_w-pump_Ivonne.webp');"></span>
+                           <p>HydraBoost </p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/hydracalm-11316">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/HydraCalm_Moisturizer_50_mL_Bottle_Ivonne.webp');"></span>
+                           <p>HydraCalm</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/hydraclarite-14015">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/HydraClarite_B50ml_ottle_silver_base_Ivonne.webp');"></span>
+                           <p>HydraClarité</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/hydradew">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/50ml_Bottle_HydraDEW_800_Ivonne.webp');"></span>
+                           <p>HydraDew</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/hydralight">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/SQR_HydraLight_RGB_Ivonne.webp');"></span>
+                           <p>HydraLight</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/hydrarich-11611">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/50ml_HydraRich_Bottle_silver_base_RGB_Ivonne.webp');"></span>
+                           <p>HydraRich</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/hydrasmooth-14023">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/HydraSmooth_Ivonne.webp');"></span>
+                           <p>HydraSmooth™</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/intellibright-complex">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_IntelliBright_Complex_Ivonne.webp');"></span>
+                           <p>Intellibright Complex</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/lightening-lotion-11426">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/50ml_Bottle_Lightening_Lotion_Ivonne.webp');"></span>
+                           <p>Lightening Lotion</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/lotus-scrub">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/120ml_Tube_Lotus_Scrub_Ivonne.webp');"></span>
+                           <p>Lotus Scrub</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/matticlear">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Matticlear_Ivonne.webp');"></span>
+                           <p>Matticlear</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/moisture-matte-broad-spectrum-sunscreen-spf-40-amber">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Moisture_Matte_Amber_SPF40_Ivonne.webp');"></span>
+                           <p>Moisture Matte Broad Spectrum SPF 40 (Amber)</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/moisture-matte-broad-spectrum-sunscreen-spf-40-ivory">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Moisture_Matte_Ivory_SPF40_Ivonne.webp');"></span>
+                           <p>Moisture Matte Broad Spectrum SPF 40 (Ivory)</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/moisture-matte-broad-spectrum-sunscreen-spf-40-sand">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Moisture_Matte_Sand_SPF40_Ivonne.webp');"></span>
+                           <p>Moisture Matte Broad Spectrum SPF 40 (Sand)</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/neck-and-decollete-firming-cream">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/90ml_Tube_Neck_and_Decollete_Firming_Cream_Ivonne.webp');"></span>
+                           <p>Neck &amp; Décolleté Firming Cream</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/purifying-gel-cleanser-11703">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Purifying_Gel_Cleanser_6oz_Bottle_with_Pump_Ivonne.webp');"></span>
+                           <p>Purifying Gel Cleanser</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/recovery-balm">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/SQR_Recovery_Balm_RGB_Ivonne.webp');"></span>
+                           <p>Recovery Balm</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/rejuvenating-skin-collection-normal-dry">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Cosmetic_Bag_Rejuvenating_Normal_Dry_Collection_RGB_Ivonne.webp');"></span>
+                           <p>Rejuvenating Skin Collection - Normal/Dry</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/rejuvenating-skin-collection-oily">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Cosmetic_Bag_Rejuvenating_Collection_Normal_Oily_Collection_RGB_Ivonne.webp');"></span>
+                           <p>Rejuvenating Skin Collection - Normal/Oily</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/retinol-eye-gel">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/15ml_Tube_Retinol_Eye_Gel_Ivonne.webp');"></span>
+                           <p>Retinol Eye Gel</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/retinol-resurfacing-serum-0-25">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Retinol_Serums_0.25_Ivonne.webp');"></span>
+                           <p>Retinol Resurfacing Serum 0.25</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/retinol-resurfacing-serum-0-5">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Retinol_Serum_0.5_Ivonne.webp');"></span>
+                           <p>Retinol Resurfacing Serum 0.5</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/retinol-resurfacing-serum-1-0">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Retinol_Serum_1.0_Ivonne.webp');"></span>
+                           <p>Retinol Resurfacing Serum 1.0</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/sensicalm">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/SensiCalm_cleanser_6oz_bottle_w-pump_Ivonne.webp');"></span>
+                           <p>SensiCalm</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/sheer-hydration-broad-spectrum-sunscreen-spf-40">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Sheer_Hydration_SPF40_Ivonne.webp');"></span>
+                           <p>Sheer Hydration Broad Spectrum SPF 40 (Untinted)</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/sheer-hydration-broad-spectrum-suncreen-spf-40-versatile-tint">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/Sheer_Hydration_Tinted_SPF40_Ivonne.webp');"></span>
+                           <p>Sheer Hydration Broad Spectrum SPF 40 (Versatile Tint)</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/spot-clearing-lotion-14008">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/15ml_Bottle_Spot_Clearing_Lotion_Ivonne.webp');"></span>
+                           <p>Spot Clearing Lotion</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/ultimate-boost-serum">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Ultimate_Boost_Serum_Ivonne.webp');"></span>
+                           <p>Ultimate Boost Serum</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <a class="pod-product" href="/products/vitamin-rich-smoother">
+                           <div class="notification-icons">
+                           </div>
+                           <span class="image" style="background-image:url('/i/30ml_Bottle_Vitamin_Rich_Smoother_Ivonne.webp');"></span>
+                           <p>Vitamin Rich Smoother</p>
+                           <span class="price">Shop</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <script type="text/javascript">
+               document.addEventListener("turbolinks:load", function(event) {
+                 if(window.ga) {
+                   gtag('event', 'view_item_list', {
+                     'search_term': "",
+                     'items': [
+                       {
+                         'id': '14002',
+                         'name': 'Acne Balancing Serum',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '14401',
+                         'name': 'Acne Clarifying Cleanser',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11405',
+                         'name': 'AHA Renewal Serum',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11318',
+                         'name': 'Alumience A.G.E.™',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11101',
+                         'name': 'AluminEye™',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '13404',
+                         'name': 'Bright &amp; Clear Solution',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54009',
+                         'name': 'Brightening Collection for Hyperpigmentation 2% HQ - Dry/Sensitive',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54008',
+                         'name': 'Brightening Collection for Hyperpigmentation 2% HQ - Normal/Oily',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54119',
+                         'name': 'Brightening Collection for Hyperpigmentation Non-HQ -  Dry/Sensitive',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54118',
+                         'name': 'Brightening Collection for Hyperpigmentation Non-HQ - Normal/Oily',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54110',
+                         'name': 'Calming Collection',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11305',
+                         'name': 'Calm-R™',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54113',
+                         'name': 'Clarifying Collection',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '12201',
+                         'name': 'Clear Shield Broad Spectrum SPF 42',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11417',
+                         'name': 'Enzymatic Peel',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11314',
+                         'name': 'EvenTone',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '51422',
+                         'name': 'EverActive C&amp;E™ + Peptide',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '33111',
+                         'name': 'Eye Rescue Pads ',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11702',
+                         'name': 'HydraBoost ',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11316',
+                         'name': 'HydraCalm',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '14015',
+                         'name': 'HydraClarité',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11201',
+                         'name': 'HydraDew',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11202',
+                         'name': 'HydraLight',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11611',
+                         'name': 'HydraRich',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '14023',
+                         'name': 'HydraSmooth™',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11304',
+                         'name': 'Intellibright Complex',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11426',
+                         'name': 'Lightening Lotion',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11003',
+                         'name': 'Lotus Scrub',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11404',
+                         'name': 'Matticlear',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '12106',
+                         'name': 'Moisture Matte Broad Spectrum SPF 40 (Amber)',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '12104',
+                         'name': 'Moisture Matte Broad Spectrum SPF 40 (Ivory)',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '12105',
+                         'name': 'Moisture Matte Broad Spectrum SPF 40 (Sand)',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11501',
+                         'name': 'Neck &amp; Décolleté Firming Cream',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11703',
+                         'name': 'Purifying Gel Cleanser',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11416',
+                         'name': 'Recovery Balm',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54112',
+                         'name': 'Rejuvenating Skin Collection - Normal/Dry',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '54111',
+                         'name': 'Rejuvenating Skin Collection - Normal/Oily',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11103',
+                         'name': 'Retinol Eye Gel',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11300',
+                         'name': 'Retinol Resurfacing Serum 0.25',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11301',
+                         'name': 'Retinol Resurfacing Serum 0.5',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11302',
+                         'name': 'Retinol Resurfacing Serum 1.0',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11309',
+                         'name': 'SensiCalm',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '12303',
+                         'name': 'Sheer Hydration Broad Spectrum SPF 40 (Untinted)',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '12304',
+                         'name': 'Sheer Hydration Broad Spectrum SPF 40 (Versatile Tint)',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '14008',
+                         'name': 'Spot Clearing Lotion',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11203',
+                         'name': 'Ultimate Boost Serum',
+                         'list_name': "Products List",
+                       },
+                       {
+                         'id': '11401',
+                         'name': 'Vitamin Rich Smoother',
+                         'list_name': "Products List",
+                       },
+                     ]
+                   });
+                 }
+               });
+            </script>
+         </div>
